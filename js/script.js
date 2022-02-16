@@ -139,27 +139,79 @@
 
 // console.log(user.sowAge());
 
-const user = {
-    name: 'sobir',
-    age: 23,
-    job: 'proggrammer',    
-    address: {
-        country: 'Uzbekistan',
-        diskrit: 'chilonzor'
+// const user = {
+//     name: 'sobir',
+//     age: 23,
+//     job: 'proggrammer',    
+//     address: {
+//         country: 'Uzbekistan',
+//         diskrit: 'chilonzor'
+//     },
+//     job:{
+//         opit: 3,
+//         level: 'backend'  
+//     }
+// };
+
+
+// for (const key in user) {
+//     if (typeof user[key] == 'object') {
+//         for (const key2 in user[key]) {
+//             console.log(user[key][key2]);
+//         }
+//     }else{
+//         console.log(user[key]);
+//     }
+// }
+// const user = {
+//     name: 'sobir',
+//     age: 23,
+//     job: 'proggrammer',    
+//     address: {
+//         country: 'Uzbekistan',
+//         diskrit: 'chilonzor'
+//     },
+//     job:{
+//         opit: 3,
+//         level: 'backend'  
+//     }
+// };
+
+
+// for (const key in user) {
+//     if (typeof user[key] == 'object') {
+//         for (const key2 in user[key]) {
+//             console.log(key2 + " = " + user[key][key2]);
+//         }
+//     }else{
+//         console.log(key + " = " + user[key]);
+//     }
+// }
+
+
+
+const vegetables ={
+    potato: {
+        weight: '10kg',
+        number: 23,
+        price: 250
     },
-    job:{
-        opit: 3,
-        level: 'backend'  
-    }
-};
-
-
-for (const key in user) {
-    if (typeof user[key] == 'object') {
-        for (const key2 in user[key]) {
-            console.log(user[key][key2]);
-        }
-    }else{
-        console.log(user[key]);
+    onion: {
+        weight: '20kg',
+        number: 43,
+        price: 400
     }
 }
+let sum = 0;
+for (const key in vegetables) {
+    for (const product in vegetables[key]){
+        if(product == "number"){
+            delete vegetables[key].number
+        }
+        if(product == "price"){
+            sum += vegetables[key][product];
+        }
+    }
+}
+console.log(vegetables);
+console.log(`sizning haridingiz ${sum} so'm boldi`);
