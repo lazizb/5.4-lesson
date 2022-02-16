@@ -139,4 +139,27 @@
 
 // console.log(user.sowAge());
 
+const user = {
+    name: 'sobir',
+    age: 23,
+    job: 'proggrammer',    
+    address: {
+        country: 'Uzbekistan',
+        diskrit: 'chilonzor'
+    },
+    job:{
+        opit: 3,
+        level: 'backend'  
+    }
+};
 
+
+for (const key in user) {
+    if (typeof user[key] == 'object') {
+        for (const key2 in user[key]) {
+            console.log(user[key][key2]);
+        }
+    }else{
+        console.log(user[key]);
+    }
+}
